@@ -1,5 +1,7 @@
+# importing a full library:
 import unittest
 
+# importing just one method of a library >> saves memory space
 from Module2.group_anagram import group_anagrams
 
 
