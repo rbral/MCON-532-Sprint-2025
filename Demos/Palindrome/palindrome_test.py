@@ -17,6 +17,12 @@ class MyTestCase(unittest.TestCase):
     def test_hello(self):
         self.assertFalse(is_palindrome("hello"))
 
+    def test_empty(self):
+        self.assertTrue(is_palindrome(""))
+
+    def test_single(self):
+        self.assertTrue(is_palindrome("a"))
+
 
 if __name__ == '__main__':
     unittest.main()
