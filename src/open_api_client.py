@@ -18,6 +18,8 @@ _client_instance = None
 # this is very global
 # trying to avoid calling create client again and again
 
+# instance of the ai api
+# create an https client
 def get_openai_client():
     global _client_instance
     # if this does not exist, create it

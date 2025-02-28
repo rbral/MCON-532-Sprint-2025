@@ -6,7 +6,9 @@ pprint(vars(client))
 
 # Make a request to OpenAI API
 completion = client.chat.completions.create(
-    model="gpt-4-turbo",
+    # passing 2 parameters: model and messages
+    # this is in the json format
+    model="gpt-3.5-turbo",
     messages=[
         {
             "role": "user",
