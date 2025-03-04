@@ -12,7 +12,14 @@ completion = client.chat.completions.create(
     messages=[
         {
             "role": "user",
-            "content": "When was the State of Israel founded?"
+            "content": "What is a computer made of?"
+        }
+        ,
+        {
+            "role": "system",
+            "content": "You are a kindergarten teacher. You will be asked a "
+                       "question and your task will be able to explain the answer "
+                       "in a way that kindergarten children can understand."
         }
     ]
 )
