@@ -2,7 +2,8 @@
 import unittest
 
 # importing just one method of a library >> saves memory space
-from Module2.group_anagram import group_anagrams
+#from Module2.group_anagram import group_anagrams
+from Demos.Module2.group_anagram import group_anagrams
 
 
 class TestGroupAnagram(unittest.TestCase):

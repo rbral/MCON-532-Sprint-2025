@@ -8,7 +8,7 @@ pprint(vars(client))
 completion = client.chat.completions.create(
     # passing 2 parameters: model and messages
     # this is in the json format
-    model="gpt-3.5-turbo",
+    model="gpt-3.5-turbo",  # Use a valid OpenAI model name
     messages=[
         {
             "role": "user",

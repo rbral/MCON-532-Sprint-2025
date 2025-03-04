@@ -2,6 +2,12 @@ import requests
 
 # GET example
 url = 'https://jsonplaceholder.typicode.com/posts/1'  # Public API
+ERROR_MESSAGE_NEGATIVE = "The number is negative"
+ERROR_MESSAGE_ZERO = "The number is zero"
+
+message = "I am trying 'single' quotes"
+print(message)
+url = 'https://jsonplaceholder.typicode.com/postsit/1'
 response = requests.get(url)
 print(response.status_code)  # Status code (200 means success)
 print(response.json())  # JSON response from API
@@ -22,3 +28,5 @@ print(response.text)  # Raw response output
 
 
 
+
+message='https://jsonplaceholder.typicode.com/postsit/1'
