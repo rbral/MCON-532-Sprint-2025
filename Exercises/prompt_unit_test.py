@@ -1,26 +1,28 @@
-students_data = {
-    101: {'name': 'Alice', 'grades': [85, 90, 88], 'gpa': round(sum([85, 90, 88]) / len([85, 90, 88]) / 25, 2)},
-    102: {'name': 'Bob', 'grades': [78, 82, 80], 'gpa': round(sum([78, 82, 80]) / len([78, 82, 80]) / 25, 2)},
-    103: {'name': 'Charlie', 'grades': [91, 94, 89], 'gpa': round(sum([91, 94, 89]) / len([91, 94, 89]) / 25, 2)}
+# Creating a Python dictionary using dictionary comprehension
+students_dict = {
+    101: {'name': 'Alice', 'grades': [85, 79, 91], 'gpa': round(sum([85, 79, 91]) / len([85, 79, 91]) / 25, 2)},
+    102: {'name': 'Bob', 'grades': [92, 88, 75], 'gpa': round(sum([92, 88, 75]) / len([92, 88, 75]) / 25, 2)},
+    103: {'name': 'Charlie', 'grades': [80, 86, 90], 'gpa': round(sum([80, 86, 90]) / len([80, 86, 90]) / 25, 2)}
 }
 
+# Unit tests using unittest
 import unittest
 
 class TestStudentData(unittest.TestCase):
 
     def test_number_of_students(self):
-        self.assertEqual(len(students_data), 3)
+        self.assertEqual(len(students_dict), 3)
 
-    def test_student_attributes(self):
-        for student_id, data in students_data.items():
-            self.assertIn('name', data)
-            self.assertIn('grades', data)
-            self.assertIn('gpa', data)
+    def test_student_details(self):
+        for student_id, student_data in students_dict.items():
+            self.assertIn('name', student_data)
+            self.assertIn('grades', student_data)
+            self.assertIn('gpa', student_data)
 
-    def test_grades_type(self):
-        for data in students_data.values():
-            for grade in data['grades']:
-                self.assertTrue(isinstance(grade, int))
+    def test_grades_are_integers(self):
+        for student_id, student_data in students_dict.items():
+            grades = student_data['grades']
+            self.assertTrue(all(isinstance(grade, int) for grade in grades))
 
 if __name__ == '__main__':
     unittest.main()

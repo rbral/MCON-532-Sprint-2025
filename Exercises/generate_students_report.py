@@ -21,7 +21,7 @@ def prompt_basic():
     "'gpa': The GPA, calculated as (sum of grades / number of grades) / 25, "
     "rounded to two decimal places.")
     response = ask_chat(user_prompt)
-    pprint(response)
+    pprint(response + "\n")
     write_to_file("prompt_basic.py", response)
 
 def prompt_comprehension():
@@ -32,7 +32,7 @@ def prompt_comprehension():
         "rounded to two decimal places. Use dictionary comprehension to construct the dictionary."
     )
     response = ask_chat(user_prompt)
-    pprint(response)
+    pprint(response + "\n")
     write_to_file("prompt_comprehension.py", response)
 
 def prompt_readability():
@@ -44,7 +44,7 @@ def prompt_readability():
         "using print() so that the student data is displayed in a well-structured format."
     )
     response = ask_chat(user_prompt)
-    pprint(response)
+    pprint(response + "\n")
     write_to_file("prompt_readability.py", response)
 
 def prompt_unit_test():
@@ -60,7 +60,7 @@ def prompt_unit_test():
         "Ensure test coverage using IntelliJ’s built-in coverage tool."
     )
     response = ask_chat(user_prompt)
-    pprint(response)
+    pprint(response + "\n")
     write_to_file("prompt_unit_test.py", response)
 
 

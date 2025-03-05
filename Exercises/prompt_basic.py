@@ -1,7 +1,5 @@
-```python
 students = {
-    123: {'name': 'Alice', 'grades': [85, 90, 88], 'gpa': round(sum([85, 90, 88])/3 / 25, 2)},
-    124: {'name': 'Bob', 'grades': [76, 82, 79, 85], 'gpa': round(sum([76, 82, 79, 85])/4 / 25, 2)},
-    125: {'name': 'Charlie', 'grades': [90, 92, 88, 95], 'gpa': round(sum([90, 92, 88, 95])/4 / 25, 2)}
+    101: {'name': 'Alice', 'grades': [85, 90, 88], 'gpa': round(sum([85, 90, 88]) / len([85, 90, 88]) / 25, 2)},
+    102: {'name': 'Bob', 'grades': [77, 82, 80], 'gpa': round(sum([77, 82, 80]) / len([77, 82, 80]) / 25, 2)},
+    103: {'name': 'Charlie', 'grades': [93, 95, 91], 'gpa': round(sum([93, 95, 91]) / len([93, 95, 91]) / 25, 2)}
 }
-```
