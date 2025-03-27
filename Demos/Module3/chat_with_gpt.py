@@ -24,7 +24,6 @@ system_prompts = [
 user_input = "Explain the importance of version control."
 
 # Execute
-if __name__ == "__main__":
     client = get_openai_client()
     for prompt in system_prompts:
         response = chat_with_gpt(client, prompt, user_input)
