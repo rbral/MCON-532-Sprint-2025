@@ -85,8 +85,11 @@ DATABASES = {
     }
 }
 
-OPEN_AI_API_KEY=os.getenv("OPENAI_API_KEY", None)
+OPENAI_API_KEY=os.getenv("OPENAI_API_KEY", None)
 OPENAI_ORG_ID=os.getenv("OPENAI_ORG_ID", None)
+
+# OPEN_API_KEY = os.getenv("OPEN_API_KEY", None)
+# OPEN_API_ID = os.getenv("OPEN_API_ID", None)
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

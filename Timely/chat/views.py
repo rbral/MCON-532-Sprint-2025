@@ -9,7 +9,7 @@ from chat.models import ChatMessage
 
 # Create your views here.
 
-client = OpenAI(api_key=settings.OPEN_API_KEY, organization=settings.OPEN_API_ID)
+client = OpenAI(api_key=settings.OPENAI_API_KEY, organization=settings.OPENAI_ORG_ID)
 def index(request):
     return render(request, 'index.html')
 
