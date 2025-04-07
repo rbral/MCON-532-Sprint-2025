@@ -1,3 +1,5 @@
+# from multiprocessing.connection import answer_challenge
+
 from django.shortcuts import render
 from openai import OpenAI
 from django.conf import settings
@@ -10,7 +12,6 @@ from chat.models import ChatMessage
 client = OpenAI(api_key=settings.OPEN_AI_API_KEY, organization=settings.OPENAI_ORG_ID)
 def index(request):
     return render(request, 'index.html')
-
 
 def response(request):
     if request.method == 'POST':
