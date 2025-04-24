@@ -4,3 +4,7 @@ python-dotenv
 django
 python-dotenv
 djangorestframework
+psycopg2-binary
+numpy
+pandas
+scikit-learn
