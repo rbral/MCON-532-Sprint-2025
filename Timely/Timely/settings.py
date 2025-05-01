@@ -88,6 +88,10 @@ DATABASES = {
 OPENAI_API_KEY=os.getenv("OPENAI_API_KEY", None)
 OPENAI_ORG_ID=os.getenv("OPENAI_ORG_ID", None)
 
+# Google Oath2 and Calendar API
+GOOGLE_CLIENT_SECRET_FILE = BASE_DIR / "credentials.json"
+GOOGLE_REDIRECT_URI = "http://localhost:8001/calendar/oauth2callback"
+
 # OPEN_API_KEY = os.getenv("OPEN_API_KEY", None)
 # OPEN_API_ID = os.getenv("OPEN_API_ID", None)
 
