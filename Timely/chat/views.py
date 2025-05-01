@@ -18,11 +18,9 @@ from chat.models import ChatMessage
 
 # Initialize OpenAI client
 # This client is used to interact with the OpenAI API for generating chat responses.
-client = OpenAI(api_key=settings.OPEN_AI_API_KEY, organization=settings.OPENAI_ORG_ID)
-
-# Create your views here.
-
 client = OpenAI(api_key=settings.OPENAI_API_KEY, organization=settings.OPENAI_ORG_ID)
+
+
 def index(request):
     """
     Render the index page.
