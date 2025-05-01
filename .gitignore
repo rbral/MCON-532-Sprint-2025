@@ -2,4 +2,12 @@
 venv/*
 src/.env
 **/.pyc
-
+/Timely/client_secret_*.json
+/Timely/static/*
+/Timely/static/css/*
+/Timely/static/js/*
+/Timely/**/*.pyc
+**/.env
+/Timely/.env
+/Timely/db.sqlite3
+/Timely/credentials.json

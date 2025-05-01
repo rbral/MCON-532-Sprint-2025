@@ -1,0 +1,20 @@
+<!-- templates/events.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upcoming Google Calendar Events</title>
+</head>
+<body>
+<h1>Upcoming Events</h1>
+<ul>
+    {% for event in events %}
+        <li>
+            <strong>{{ event.summary }}</strong><br>
+            {{ event.start.dateTime|default:event.start.date }}
+        </li>
+    {% empty %}
+        <li>No upcoming events found.</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
