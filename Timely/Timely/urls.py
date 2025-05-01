@@ -21,6 +21,6 @@ from chat.views import logout_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('chat.urls')),
-    path('logout/', logout_view, name='logout'),
+
 ]
 
