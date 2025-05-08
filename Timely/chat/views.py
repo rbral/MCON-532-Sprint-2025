@@ -99,7 +99,7 @@ def google_login(request):
     return redirect(auth_url)
 
 
-def oauth2callback(request):
+def google_authenticate(request):
     """
     Handle the OAuth2 callback after the user authorizes the application.
 
