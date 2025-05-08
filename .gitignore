@@ -3,6 +3,7 @@ venv/*
 
 # so you should not put API into git
 src/.env
+.env
 Timely/.env
 
 # Ignore environment variable files
