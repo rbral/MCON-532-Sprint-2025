@@ -11,6 +11,7 @@ Timely/.env
 
 # Ignore Python cache files
 **/.pyc
+*.pyc
 **/__pycache__/
 
 # Ignore static files
