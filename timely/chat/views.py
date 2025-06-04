@@ -68,7 +68,7 @@ def response(request):
             messages=[
                 {"role": "assistant", "content": "You are a helpful assistant. use my schedule to answer my questions."},
                 {"role": "user", "content": prompt},
-                {"role": "user", "content": f"Here is my schedule: {relevant_context}"},
+                {"role": "user", "content": f"Here is my schedule: {upcoming_events}"},
 
             ],
             top_p=0.7,
