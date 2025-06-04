@@ -26,12 +26,11 @@ from sklearn.metrics.pairwise import cosine_similarity
 # This client is used to interact with the OpenAI API for generating chat responses.
 client = OpenAI(api_key=settings.OPENAI_API_KEY, organization=settings.OPENAI_ORG_ID)
 
-
 def index(request):
     """
     Render the index page.
     """
-    return render(request, 'index.html')
+    return render(request, 'templates\index.html')
 
 
 def response(request):
@@ -86,7 +85,6 @@ def response(request):
     return JsonResponse({'response': 'Invalid Request'}, status=400)
 
 
-
 # Define Google OAuth scopes
 # These scopes determine the level of access the application has to the user's Google account.
 SCOPES = [
@@ -112,6 +110,14 @@ def google_login(request):
         scopes=SCOPES,
         redirect_uri=settings.GOOGLE_REDIRECT_URI
     )
+    # flow = Flow.from_client_secrets_file(
+    #     settings.GOOGLE_CLIENT_SECRET_FILE,
+    #     scopes=SCOPES,
+    #     redirect_uri=settings.GOOGLE_REDIRECT_URI
+    # )
+    # flow.fetch_token(authorization_response=request.build_absolute_uri())
+    # credentials = flow.credentials
+
     # Generate the authorization URL
     auth_url, _ = flow.authorization_url(
         prompt='consent',
@@ -249,18 +255,18 @@ def list_events(request):
                 if event_start.tzinfo is None:
                     event_start = pytz.utc.localize(event_start)
                 else:
-                 event_start = event_start.astimezone(pytz.utc)
+                    event_start = event_start.astimezone(pytz.utc)
             except ValueError:
                 continue  # skip if invalid format
-        embedding = embed_text(json.dumps(event))
-        event_instances.append(CalendarEvent(
-            user=request.user,
-            event_data=event,
-            event_start=event_start,
-            embedding=embedding,
-            summary=summary
-        ))
-    return render(request, 'events.html', {'events': events})
+            embedding = embed_text(json.dumps(event))
+            event_instances.append(CalendarEvent(
+                user=request.user,
+                event_data=event,
+                event_start=event_start,
+                embedding=embedding,
+                summary=summary
+            ))
+    return render(request, 'templates\events.html', {'events': events})
 def logout_view(request):
     """
     Log the user out and redirect to the home page.
@@ -305,10 +311,6 @@ def get_combined_event_data_for_assistant(user):
     return json.dumps(combined_events_data, indent=2)
 
 
-
-# Initialize OpenAI client
-# This client is used to interact with the OpenAI API for generating chat responses.
-client = OpenAI(api_key=settings.OPENAI_API_KEY, organization=settings.OPENAI_ORG_ID)
 
 
 def compute_cosine_similarities(query_vector, matrix):
